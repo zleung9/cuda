@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/zhuliang/cuda/c_tutorials/pointer'
+relocations:     []
+...
