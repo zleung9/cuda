@@ -1,6 +1,8 @@
-.PHONY: pointer type macro clean
+.PHONY: pointer type macro add clean
 
 GCLANG = clang++
+GCC = g++
+NVCC = nvcc
 
 type:
 	@$(GCLANG) type.cpp -o type.o
@@ -17,5 +19,11 @@ macro:
 	@./macro.o
 	@rm -rf macro.o
 
+add:
+	@$(NVCC) vector_add.cu -o vector_add.o
+	@./vector_add.o
+	@rm -rf vector_add.o
+
 clean: 
 	rm -rf pointer.o type.o macro.o
+
