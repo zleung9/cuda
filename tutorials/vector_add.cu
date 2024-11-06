@@ -3,7 +3,7 @@
 #include <time.h>
 #include <cuda_runtime.h>
 
-#define N 10000000  // Vector size = 10 million
+#define N 400000000  // Vector size = 10 million
 #define BLOCK_SIZE 256 // Number of threads per block
 
 // CPU vector addition
@@ -16,7 +16,7 @@ void vector_add_cpu(float *a, float *b, float *c, int n) {
 // CUDA kernel for vector addition
 __global__ void vector_add_gpu(float *a, float *b, float *c, int n) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
-    if (i < n) {
+    if (i < gridDim.x) {
         c[i] = a[i] + b[i];
     }
 }
