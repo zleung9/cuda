@@ -1,3 +1,5 @@
 .vscode/
 cpp.dSYM/
 .DS_Store
+mnist_data/
+mnist-cuda/data
